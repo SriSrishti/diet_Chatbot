@@ -22,7 +22,6 @@ mongo_uri = os.getenv("MONGODB_URI")
 # print(groq_api_key)
 # print(mongo_uri)
 
-# client = MongoClient("mongodb+srv://srishtikumari325_db_user:Yyt70Qv2Ud7VnmRH@cluster0.szwbpb6.mongodb.net/?appName=Cluster0")
 client = MongoClient(mongo_uri, tlsCAFile=certifi.where())
 
 db = client["Chatbot"]
