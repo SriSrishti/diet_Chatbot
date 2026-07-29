@@ -14,12 +14,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-GROQ_API_Key = "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"
-MONGODB_URI = "mongodb+srv://srishtikumari325_db_user:Yyt70Qv2Ud7VnmRH@cluster0.szwbpb6.mongodb.net/?appName=Cluster0"
-
-os.environ["GROQ_API_Key"] = GROQ_API_Key
-os.environ["MONGODB_URI"] = MONGODB_URI
-
 load_dotenv()
 
 groq_api_key = os.getenv("GROQ_API_Key")
@@ -59,7 +53,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-llm = ChatGroq(api_key= GROQ_API_Key, model = "openai/gpt-oss-20b")
+llm = ChatGroq(api_key= groq_api_key, model = "openai/gpt-oss-20b")
 chain = prompt | llm
 
 
